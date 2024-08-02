@@ -6,8 +6,8 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def index():
     data = request.get_json()
-    source_currency = data['queryResult']['parameters']['unit-currency']['currency'] 
-    amount = data['queryResult']['parameters']['unit-currency']['amount']
+    source_currency = data['queryResult']['parameters']['unit-currency']['0']['currency'] 
+    amount = data['queryResult']['parameters']['unit-currency']['0']['amount']
     
     # Get just string without quotes 
     target_currency = data['queryResult']['parameters']['currency-name'][0]
